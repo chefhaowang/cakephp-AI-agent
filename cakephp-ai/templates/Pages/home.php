@@ -8,71 +8,74 @@ $this->assign('title', 'Home');
 
 <section class="hero">
     <div class="hero__content">
-        <div class="hero__eyebrow">
-            <span class="hero__eyebrow-dot" aria-hidden="true"></span>
-            Agent platform
-        </div>
-        <h1>Build intelligent agents with <span>CakePHP</span></h1>
+        <p class="hero__eyebrow">Start here</p>
+        <h1>Find the AI tool you need</h1>
         <p class="hero__lead">
-            A modern starting point for AI-powered applications — chat interfaces,
-            tool orchestration, and agent workflows on a solid PHP foundation.
+            Choose one clear option below. Each tool says what it does in plain words,
+            so you do not need to know any technical terms.
         </p>
         <div class="hero__actions">
-            <a class="btn btn--primary" href="#features">Explore features</a>
-            <a class="btn btn--ghost" href="https://book.cakephp.org/5/" target="_blank" rel="noopener">CakePHP docs</a>
+            <a class="btn btn--primary" href="#features">Show me the tools</a>
+            <a class="btn btn--ghost" href="#help">I need help</a>
         </div>
     </div>
 
-    <aside class="chat-preview" aria-label="Agent chat preview">
-        <div class="chat-preview__header">
-            <div class="chat-preview__title">
-                <span class="chat-preview__status" aria-hidden="true"></span>
-                Agent session
-            </div>
-            <div class="chat-preview__dots" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        <div class="chat-preview__body">
-            <div class="chat-bubble chat-bubble--user">
-                Summarize the latest orders and flag anything overdue.
-            </div>
-            <div class="chat-bubble chat-bubble--agent">
-                Found <strong>12 orders</strong> from the last 7 days. Two are overdue —
-                I'll draft follow-up emails and queue them for review.
-            </div>
-            <div class="chat-bubble chat-bubble--agent">
-                Running tool: <code>OrdersTable::findOverdue()</code>
-            </div>
-        </div>
-        <div class="chat-preview__input">
-            <div class="chat-preview__input-field">Ask your agent anything…</div>
-            <button class="chat-preview__send" type="button" aria-label="Send message" disabled>↑</button>
+    <aside id="start" class="quick-start" aria-label="Quick start guide">
+        <h2>What do you want to do?</h2>
+        <div class="quick-start__steps">
+            <a class="quick-start__step" href="#chat">
+                <span class="quick-start__number">1</span>
+                <span>
+                    <strong>Ask a question</strong>
+                    Get a simple answer from the assistant.
+                </span>
+            </a>
+            <a class="quick-start__step" href="#tasks">
+                <span class="quick-start__number">2</span>
+                <span>
+                    <strong>Get a task done</strong>
+                    Let the assistant prepare work for you.
+                </span>
+            </a>
+            <a class="quick-start__step" href="#help">
+                <span class="quick-start__number">3</span>
+                <span>
+                    <strong>Get help</strong>
+                    See where to go when you are unsure.
+                </span>
+            </a>
         </div>
     </aside>
 </section>
 
 <section id="features">
-    <h2 class="section-heading">Everything you need to start</h2>
-    <p class="section-subtitle">Extend this scaffold with models, tools, and your preferred LLM provider.</p>
+    <h2 class="section-heading">Choose a tool</h2>
+    <p class="section-subtitle">Large buttons and simple names make each feature easier to find.</p>
 
     <div class="feature-grid">
-        <article class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">💬</div>
-            <h3>Conversational UI</h3>
-            <p>Drop in a real chat component and wire it to your agent backend with minimal changes.</p>
-        </article>
-        <article class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">🔧</div>
-            <h3>Tool orchestration</h3>
-            <p>Connect CakePHP models, services, and external APIs as agent-callable tools.</p>
-        </article>
-        <article class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">⚡</div>
-            <h3>Production ready</h3>
-            <p>Built on CakePHP 5 with routing, middleware, and testing already in place.</p>
-        </article>
+        <a id="chat" class="feature-card" href="#chat">
+            <div class="feature-card__icon" aria-hidden="true">?</div>
+            <h3>Ask the assistant</h3>
+            <p>Type a question and get a clear answer.</p>
+            <span class="feature-card__action">Open this tool</span>
+        </a>
+        <a id="tasks" class="feature-card" href="#tasks">
+            <div class="feature-card__icon" aria-hidden="true">✓</div>
+            <h3>Prepare my work</h3>
+            <p>Ask the assistant to draft, summarize, or check something.</p>
+            <span class="feature-card__action">Open this tool</span>
+        </a>
+        <a class="feature-card" href="#help">
+            <div class="feature-card__icon" aria-hidden="true">i</div>
+            <h3>Help and guidance</h3>
+            <p>Find simple instructions when you are not sure what to choose.</p>
+            <span class="feature-card__action">Open help</span>
+        </a>
     </div>
+</section>
+
+<section id="help" class="help-panel" aria-labelledby="help-heading">
+    <h2 id="help-heading">Need help choosing?</h2>
+    <p>If you want an answer, choose <strong>Ask the assistant</strong>. If you want the assistant to make or check something, choose <strong>Prepare my work</strong>.</p>
+    <a class="btn btn--primary" href="#features">Back to tools</a>
 </section>
