@@ -1,55 +1,51 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
- * @since         0.10.0
- * @license       https://opensource.org/licenses/mit-license.php MIT License
  * @var \App\View\AppView $this
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$appName = 'CakePHP AI Agent';
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
-    </title>
+    <meta name="description" content="Intelligent agents powered by CakePHP">
+    <title><?= $this->fetch('title') ? h($this->fetch('title')) . ' · ' . h($appName) : h($appName) ?></title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'fonts', 'cake']) ?>
+    <?= $this->Html->css(['fonts', 'app']) ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
 <body>
-    <nav class="top-nav">
-        <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
-        </div>
-        <div class="top-nav-links">
-            <a target="_blank" rel="noopener" href="https://book.cakephp.org/5/">Documentation</a>
-            <a target="_blank" rel="noopener" href="https://api.cakephp.org/">API</a>
-        </div>
-    </nav>
-    <main class="main">
-        <div class="container">
+    <div class="app-shell">
+        <header class="app-header">
+            <div class="app-header__inner">
+                <a class="app-brand" href="<?= $this->Url->build('/') ?>">
+                    <span class="app-brand__mark" aria-hidden="true">AI</span>
+                    <span><?= h($appName) ?></span>
+                </a>
+                <nav class="app-nav" aria-label="Main">
+                    <a href="#features">Features</a>
+                    <a href="https://book.cakephp.org/5/" target="_blank" rel="noopener">Docs</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="app-main">
             <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
-        </div>
-    </main>
-    <footer>
-    </footer>
+        </main>
+
+        <footer class="app-footer">
+            <div class="app-footer__inner">
+                <span>Built with CakePHP <?= h(\Cake\Core\Configure::version()) ?></span>
+                <span>Ready for your next agent workflow</span>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
