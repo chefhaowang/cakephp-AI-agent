@@ -29,7 +29,7 @@ $appName = 'CakePHP AI Agent';
         <header class="app-header">
             <div class="app-header__inner">
                 <a class="app-brand" href="<?= $this->Url->build('/') ?>">
-                    <span class="app-brand__mark" aria-hidden="true">AI</span>
+                    <span class="app-brand__mark" aria-hidden="true">✨</span>
                     <span><?= h($appName) ?></span>
                 </a>
                 <nav class="app-nav" aria-label="Main">

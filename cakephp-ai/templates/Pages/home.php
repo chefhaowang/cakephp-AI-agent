@@ -62,7 +62,7 @@ $this->Html->script('chat', ['block' => true]);
     <div class="chat-panel__messages" data-chat-messages aria-live="polite" aria-label="Chat messages">
         <article class="chat-message chat-message--assistant">
             <span class="chat-message__label">Assistant</span>
-            <p>Ask me a question and I will help you get started.</p>
+            <p>Hello there! Ask me a question and I will help you get started. 💕</p>
         </article>
     </div>
 
@@ -86,19 +86,19 @@ $this->Html->script('chat', ['block' => true]);
 
     <div class="feature-grid">
         <a id="chat-tool" class="feature-card" href="#chat-box">
-            <div class="feature-card__icon" aria-hidden="true">?</div>
+            <div class="feature-card__icon" aria-hidden="true">🤖</div>
             <h3>Ask the assistant</h3>
             <p>Type a question and get a clear answer.</p>
             <span class="feature-card__action">Open this tool</span>
         </a>
         <a id="tasks" class="feature-card" href="#tasks">
-            <div class="feature-card__icon" aria-hidden="true">✓</div>
+            <div class="feature-card__icon" aria-hidden="true">✏️</div>
             <h3>Prepare my work</h3>
             <p>Ask the assistant to draft, summarize, or check something.</p>
             <span class="feature-card__action">Open this tool</span>
         </a>
         <a class="feature-card" href="#help">
-            <div class="feature-card__icon" aria-hidden="true">i</div>
+            <div class="feature-card__icon" aria-hidden="true">💡</div>
             <h3>Help and guidance</h3>
             <p>Find simple instructions when you are not sure what to choose.</p>
             <span class="feature-card__action">Open help</span>
