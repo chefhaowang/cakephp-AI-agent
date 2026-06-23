@@ -56,3 +56,14 @@ Other environment agnostic settings can be changed in `config/app.php`.
 The app skeleton uses [Milligram](https://milligram.io/) (v1.3) minimalist CSS
 framework by default. You can, however, replace it with any other library or
 custom styles.
+
+## Generated Interface Code
+
+The current home interface is built from these generated files:
+
+- `templates/Pages/home.php` defines the green home page sections and the chat box markup.
+- `webroot/css/app.css` defines the green visual palette, layout styles, and chat box styling.
+- `webroot/js/chat.js` defines the documented client-side chat behavior.
+- `templates/layout/default.php` loads the app CSS and page scripts, and sets the green browser theme color.
+
+The chat box is currently a front-end interface only. It appends the user's message to the transcript and returns local placeholder text. Add a CakePHP endpoint and replace the placeholder response in `webroot/js/chat.js` when live AI responses are ready.

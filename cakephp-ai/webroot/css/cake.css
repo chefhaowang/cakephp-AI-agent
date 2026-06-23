@@ -1,35 +1,35 @@
 /* Milligram overrides */
 :root {
-    /* The following are official CakePHP colors */
-    --color-cakephp-red: #d33c43;
-    --color-cakephp-gray: #404041;
-    --color-cakephp-blue: #2f85ae;
-    --color-cakephp-lightblue: #34bdd7;
+    /* Green interface palette */
+    --color-cakephp-red: #16823a;
+    --color-cakephp-gray: #263d2d;
+    --color-cakephp-blue: #16823a;
+    --color-cakephp-lightblue: #4bbf6a;
 
     /* These are additional colors */
-    --color-lightgray: #606c76;
+    --color-lightgray: #4f7559;
     --color-white: #fff;
 
-    --color-main-bg: #f5f7fa;
+    --color-main-bg: #f6fbf7;
     --color-links: var(--color-cakephp-blue);
-    --color-links-active: #2a6496;
-    --color-headings: #363637;
+    --color-links-active: #0f5f2a;
+    --color-headings: #102316;
 
-    --color-message-success-bg: #e3fcec;
-    --color-message-success-text: #1f9d55;
-    --color-message-success-border: #51d88a;
+    --color-message-success-bg: #e7f7eb;
+    --color-message-success-text: #16823a;
+    --color-message-success-border: #8bc79b;
 
-    --color-message-warning-bg: #fffabc;
-    --color-message-warning-text: #8d7b00;
-    --color-message-warning-border: #d3b800;
+    --color-message-warning-bg: #eff8e7;
+    --color-message-warning-text: #4d8b1f;
+    --color-message-warning-border: #9bc77d;
 
-    --color-message-error-bg: #fcebea;
-    --color-message-error-text: #cc1f1a;
-    --color-message-error-border: #ef5753;
+    --color-message-error-bg: #eaf7ee;
+    --color-message-error-text: #1f7a35;
+    --color-message-error-border: #74b987;
 
-    --color-message-info-bg: #eff8ff;
-    --color-message-info-text: #2779bd;
-    --color-message-info-border: #6cb2eb;
+    --color-message-info-bg: #eef8f0;
+    --color-message-info-text: #16823a;
+    --color-message-info-border: #8bc79b;
 }
 
 .button, button, input[type='button'], input[type='reset'], input[type='submit'] {
