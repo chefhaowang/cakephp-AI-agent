@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    initScrollReveal();
+
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
@@ -32,12 +34,17 @@ document.addEventListener('DOMContentLoaded', () => {
         input.value = '';
         input.focus();
 
-        appendMessage(
-            messages,
-            'Assistant',
-            'I have your message. Connect this chat box to an AI endpoint to generate a live response.',
-            'assistant'
-        );
+        const typingIndicator = showTypingIndicator(messages);
+
+        window.setTimeout(() => {
+            typingIndicator.remove();
+            appendMessage(
+                messages,
+                'System',
+                'Prompt payload received by the local UI stub. Connect a server-side AI endpoint to replace this simulated response.',
+                'assistant'
+            );
+        }, 900);
     });
 });
 
@@ -54,6 +61,14 @@ function appendMessage(messages, label, text, sender) {
     const message = document.createElement('article');
     message.className = `chat-message chat-message--${sender}`;
 
+    const avatar = document.createElement('span');
+    avatar.className = 'chat-message__avatar';
+    avatar.setAttribute('aria-hidden', 'true');
+    avatar.textContent = sender === 'user' ? 'You' : 'AI';
+
+    const bubble = document.createElement('div');
+    bubble.className = 'chat-message__bubble';
+
     const labelElement = document.createElement('span');
     labelElement.className = 'chat-message__label';
     labelElement.textContent = label;
@@ -61,7 +76,72 @@ function appendMessage(messages, label, text, sender) {
     const body = document.createElement('p');
     body.textContent = text;
 
-    message.append(labelElement, body);
+    bubble.append(labelElement, body);
+    message.append(avatar, bubble);
     messages.append(message);
     messages.scrollTop = messages.scrollHeight;
+}
+
+/**
+ * Shows a typing indicator while waiting for the assistant response.
+ *
+ * @param {Element} messages Transcript element that receives the indicator.
+ * @returns {Element} The typing indicator element for later removal.
+ */
+function showTypingIndicator(messages) {
+    const message = document.createElement('article');
+    message.className = 'chat-message chat-message--assistant chat-message--typing';
+
+    const avatar = document.createElement('span');
+    avatar.className = 'chat-message__avatar';
+    avatar.setAttribute('aria-hidden', 'true');
+    avatar.textContent = 'AI';
+
+    const bubble = document.createElement('div');
+    bubble.className = 'chat-message__bubble';
+    bubble.setAttribute('aria-label', 'Assistant is typing');
+
+    for (let i = 0; i < 3; i += 1) {
+        const dot = document.createElement('span');
+        dot.className = 'typing-dot';
+        bubble.append(dot);
+    }
+
+    message.append(avatar, bubble);
+    messages.append(message);
+    messages.scrollTop = messages.scrollHeight;
+
+    return message;
+}
+
+/**
+ * Fades sections into view as they enter the viewport.
+ *
+ * @returns {void}
+ */
+function initScrollReveal() {
+    const elements = document.querySelectorAll('.reveal');
+
+    if (elements.length === 0) {
+        return;
+    }
+
+    if (!('IntersectionObserver' in window)) {
+        elements.forEach((element) => element.classList.add('is-visible'));
+        return;
+    }
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    elements.forEach((element) => observer.observe(element));
 }

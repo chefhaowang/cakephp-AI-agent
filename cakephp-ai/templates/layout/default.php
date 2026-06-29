@@ -17,7 +17,7 @@ $appName = 'CakePHP AI Agent';
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <?= $this->Html->css(['fonts', 'app']) ?>
 
@@ -25,17 +25,25 @@ $appName = 'CakePHP AI Agent';
     <?= $this->fetch('css') ?>
 </head>
 <body>
+    <div class="app-bg" aria-hidden="true">
+        <div class="app-bg__grid"></div>
+        <div class="app-bg__scanline"></div>
+    </div>
+
     <div class="app-shell">
         <header class="app-header">
             <div class="app-header__inner">
                 <a class="app-brand" href="<?= $this->Url->build('/') ?>">
-                    <span class="app-brand__mark" aria-hidden="true">AI</span>
-                    <span><?= h($appName) ?></span>
+                    <span class="app-brand__mark" aria-hidden="true">λ</span>
+                    <span>
+                        <span class="app-brand__name"><?= h($appName) ?></span>
+                        <span class="app-brand__meta">runtime console</span>
+                    </span>
                 </a>
                 <nav class="app-nav" aria-label="Main">
-                    <a href="#start">Start here</a>
-                    <a href="#features">Tools</a>
-                    <a href="#help">Help</a>
+                    <a href="#start">Boot</a>
+                    <a href="#features">Modules</a>
+                    <a href="#help">Protocol</a>
                 </nav>
             </div>
         </header>
@@ -47,8 +55,8 @@ $appName = 'CakePHP AI Agent';
 
         <footer class="app-footer">
             <div class="app-footer__inner">
-                <span>Built with CakePHP <?= h(\Cake\Core\Configure::version()) ?></span>
-                <span>AI workspace for focused assistance</span>
+                <span>cakephp@<?= h(\Cake\Core\Configure::version()) ?></span>
+                <span>local assistant interface / technical preview</span>
             </div>
         </footer>
     </div>
