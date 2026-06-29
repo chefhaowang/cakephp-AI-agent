@@ -48,17 +48,11 @@ class PagesController extends AppController
         if (!$path) {
             return $this->redirect('/');
         }
-        if (in_array('..', $path, true) || in_array('.', $path, true)) {
+        if (array_intersect(['..', '.'], $path)) {
             throw new ForbiddenException();
         }
-        $page = $subpage = null;
 
-        if (!empty($path[0])) {
-            $page = $path[0];
-        }
-        if (!empty($path[1])) {
-            $subpage = $path[1];
-        }
+        [$page, $subpage] = array_pad($path, 2, null);
         $this->set(compact('page', 'subpage'));
 
         try {

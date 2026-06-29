@@ -37,7 +37,9 @@
     --shadow-md: 0 6px 22px rgba(122, 72, 120, 0.12);
     --shadow-lg: 0 16px 36px rgba(122, 72, 120, 0.14);
     --shadow-xl: 0 24px 48px rgba(122, 72, 120, 0.16);
-    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+    --font-sans:
+        "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        sans-serif;
     --font-mono: ui-monospace, "SF Mono", "Cascadia Code", monospace;
     --header-height: 78px;
     --content-width: 1200px;
@@ -56,18 +58,33 @@ body {
     font-size: 16px;
     line-height: 1.65;
     color: var(--text-primary);
-    background: radial-gradient(circle at top left, rgba(255, 214, 240, 0.45) 0%, transparent 22%),
-                radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0.8) 0%, transparent 14%),
-                radial-gradient(circle at 20% 90%, rgba(255, 244, 250, 0.95) 0%, transparent 18%),
-                var(--bg-base);
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(255, 214, 240, 0.45) 0%,
+            transparent 22%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(255, 255, 255, 0.8) 0%,
+            transparent 14%
+        ),
+        radial-gradient(
+            circle at 20% 90%,
+            rgba(255, 244, 250, 0.95) 0%,
+            transparent 18%
+        ),
+        var(--bg-base);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
- a {
+a {
     color: var(--accent);
     text-decoration: none;
-    transition: color var(--transition-fast), transform var(--transition-fast);
+    transition:
+        color var(--transition-fast),
+        transform var(--transition-fast);
 }
 
 a:hover {
@@ -163,7 +180,10 @@ select {
     font-weight: 700;
     background: rgba(255, 255, 255, 0.85);
     border: 1px solid rgba(244, 198, 224, 0.55);
-    transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+    transition:
+        transform var(--transition-fast),
+        background var(--transition-fast),
+        color var(--transition-fast);
 }
 
 .app-nav a:hover {
@@ -259,11 +279,20 @@ select {
 }
 
 .hero::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 10% 20%, rgba(255, 181, 223, 0.5) 0%, transparent 22%),
-                radial-gradient(circle at 80% 10%, rgba(255, 238, 249, 0.85) 0%, transparent 12%);
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 181, 223, 0.5) 0%,
+            transparent 22%
+        ),
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(255, 238, 249, 0.85) 0%,
+            transparent 12%
+        );
     pointer-events: none;
 }
 
@@ -280,7 +309,7 @@ select {
 }
 
 .hero__eyebrow::before {
-    content: '🌸';
+    content: "🌸";
 }
 
 .hero h1 {
@@ -330,7 +359,7 @@ select {
 }
 
 .btn::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
@@ -387,7 +416,7 @@ select {
 
 .quick-start::after,
 .help-panel::after {
-    content: '✨';
+    content: "✨";
     position: absolute;
     font-size: 3rem;
     color: rgba(222, 107, 182, 0.14);
@@ -467,7 +496,7 @@ select {
 }
 
 .chat-panel::before {
-    content: '💬';
+    content: "💬";
     position: absolute;
     top: 1rem;
     left: 1rem;
@@ -589,7 +618,9 @@ select {
     background: var(--bg-elevated);
     font: inherit;
     resize: vertical;
-    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    transition:
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
 }
 
 .chat-panel textarea:focus {
@@ -640,7 +671,7 @@ select {
 }
 
 .feature-card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -678,7 +709,7 @@ select {
 }
 
 .feature-card__icon::after {
-    content: '✨';
+    content: "✨";
     position: absolute;
     top: 8px;
     right: 8px;
@@ -712,7 +743,9 @@ select {
     background: var(--accent-soft);
     color: var(--accent);
     font-weight: 700;
-    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    transition:
+        transform var(--transition-base),
+        box-shadow var(--transition-base);
     border: 2px solid transparent;
 }
 
