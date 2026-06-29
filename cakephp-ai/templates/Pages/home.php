@@ -3,46 +3,46 @@
  * @var \App\View\AppView $this
  */
 
-$this->assign('title', 'Home');
+$this->assign('title', 'AI Workspace');
 $this->Html->script('chat', ['block' => true]);
 ?>
 
 <section class="hero">
     <div class="hero__content">
-        <p class="hero__eyebrow">Start here</p>
-        <h1>Find the AI tool you need</h1>
+        <p class="hero__eyebrow">AI workspace</p>
+        <h1>Get from question to usable output faster.</h1>
         <p class="hero__lead">
-            Choose one clear option below. Each tool says what it does in plain words,
-            so you do not need to know any technical terms.
+            Ask questions, prepare drafts, and turn rough input into structured work
+            from one focused interface.
         </p>
         <div class="hero__actions">
-            <a class="btn btn--primary" href="#features">Show me the tools</a>
-            <a class="btn btn--ghost" href="#help">I need help</a>
+            <a class="btn btn--primary" href="#chat-box">Start a conversation</a>
+            <a class="btn btn--ghost" href="#features">View capabilities</a>
         </div>
     </div>
 
     <aside id="start" class="quick-start" aria-label="Quick start guide">
-        <h2>What do you want to do?</h2>
+        <h2>Common workflows</h2>
         <div class="quick-start__steps">
             <a class="quick-start__step" href="#chat-box">
                 <span class="quick-start__number">1</span>
                 <span>
-                    <strong>Ask a question</strong>
-                    Get a simple answer from the assistant.
+                    <strong>Clarify a question</strong>
+                    Get a direct answer or a set of next steps.
                 </span>
             </a>
             <a class="quick-start__step" href="#tasks">
                 <span class="quick-start__number">2</span>
                 <span>
-                    <strong>Get a task done</strong>
-                    Let the assistant prepare work for you.
+                    <strong>Prepare work</strong>
+                    Draft, summarize, rewrite, or check content.
                 </span>
             </a>
             <a class="quick-start__step" href="#help">
                 <span class="quick-start__number">3</span>
                 <span>
-                    <strong>Get help</strong>
-                    See where to go when you are unsure.
+                    <strong>Choose a path</strong>
+                    Use guidance when the right request is unclear.
                 </span>
             </a>
         </div>
@@ -54,15 +54,15 @@ $this->Html->script('chat', ['block' => true]);
     <div class="chat-panel__header">
         <div>
             <p class="chat-panel__eyebrow">Assistant chat</p>
-            <h2 id="chat-heading">Ask the assistant</h2>
+            <h2 id="chat-heading">Start with a message</h2>
         </div>
-        <span class="chat-panel__status" aria-label="Assistant status">Ready</span>
+        <span class="chat-panel__status" aria-label="Assistant status">Available</span>
     </div>
 
     <div class="chat-panel__messages" data-chat-messages aria-live="polite" aria-label="Chat messages">
         <article class="chat-message chat-message--assistant">
             <span class="chat-message__label">Assistant</span>
-            <p>Hello there! Ask me a question and I will help you get started. 💕</p>
+            <p>Ask a question or describe the work you want prepared.</p>
         </article>
     </div>
 
@@ -73,7 +73,7 @@ $this->Html->script('chat', ['block' => true]);
             name="message"
             rows="3"
             data-chat-input
-            placeholder="Type your question here"
+            placeholder="Ask about a topic, paste text to improve, or describe a task"
             required
         ></textarea>
         <button class="btn btn--primary chat-panel__send" type="submit">Send</button>
@@ -81,33 +81,33 @@ $this->Html->script('chat', ['block' => true]);
 </section>
 
 <section id="features">
-    <h2 class="section-heading">Choose a tool</h2>
-    <p class="section-subtitle">Large buttons and simple names make each feature easier to find.</p>
+    <h2 class="section-heading">Capabilities</h2>
+    <p class="section-subtitle">Focused entry points for the most common assistant workflows.</p>
 
     <div class="feature-grid">
         <a id="chat-tool" class="feature-card" href="#chat-box">
-            <div class="feature-card__icon" aria-hidden="true">🤖</div>
-            <h3>Ask the assistant</h3>
-            <p>Type a question and get a clear answer.</p>
-            <span class="feature-card__action">Open this tool</span>
+            <div class="feature-card__icon" aria-hidden="true">Q</div>
+            <h3>Question answering</h3>
+            <p>Get concise answers, explanations, and practical next steps.</p>
+            <span class="feature-card__action">Open chat</span>
         </a>
         <a id="tasks" class="feature-card" href="#tasks">
-            <div class="feature-card__icon" aria-hidden="true">✏️</div>
-            <h3>Prepare my work</h3>
-            <p>Ask the assistant to draft, summarize, or check something.</p>
-            <span class="feature-card__action">Open this tool</span>
+            <div class="feature-card__icon" aria-hidden="true">D</div>
+            <h3>Drafting support</h3>
+            <p>Create, refine, summarize, or review written material.</p>
+            <span class="feature-card__action">Prepare work</span>
         </a>
         <a class="feature-card" href="#help">
-            <div class="feature-card__icon" aria-hidden="true">💡</div>
-            <h3>Help and guidance</h3>
-            <p>Find simple instructions when you are not sure what to choose.</p>
-            <span class="feature-card__action">Open help</span>
+            <div class="feature-card__icon" aria-hidden="true">G</div>
+            <h3>Guided requests</h3>
+            <p>Find the right starting prompt when a task needs more structure.</p>
+            <span class="feature-card__action">Get guidance</span>
         </a>
     </div>
 </section>
 
 <section id="help" class="help-panel" aria-labelledby="help-heading">
-    <h2 id="help-heading">Need help choosing?</h2>
-    <p>If you want an answer, choose <strong>Ask the assistant</strong>. If you want the assistant to make or check something, choose <strong>Prepare my work</strong>.</p>
-    <a class="btn btn--primary" href="#features">Back to tools</a>
+    <h2 id="help-heading">How to get better results</h2>
+    <p>Include the outcome you want, any source material, and the tone or format you prefer. For example: “Summarize this in three bullets for a project update.”</p>
+    <a class="btn btn--primary" href="#chat-box">Ask the assistant</a>
 </section>

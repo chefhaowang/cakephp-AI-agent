@@ -10,8 +10,8 @@ $appName = 'CakePHP AI Agent';
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Simple AI assistant tools powered by CakePHP">
-    <meta name="theme-color" content="#16823a">
+    <meta name="description" content="AI assistant workspace powered by CakePHP">
+    <meta name="theme-color" content="#0f172a">
     <title><?= $this->fetch('title') ? h($this->fetch('title')) . ' · ' . h($appName) : h($appName) ?></title>
     <?= $this->Html->meta('icon') ?>
 
@@ -29,7 +29,7 @@ $appName = 'CakePHP AI Agent';
         <header class="app-header">
             <div class="app-header__inner">
                 <a class="app-brand" href="<?= $this->Url->build('/') ?>">
-                    <span class="app-brand__mark" aria-hidden="true">✨</span>
+                    <span class="app-brand__mark" aria-hidden="true">AI</span>
                     <span><?= h($appName) ?></span>
                 </a>
                 <nav class="app-nav" aria-label="Main">
@@ -48,7 +48,7 @@ $appName = 'CakePHP AI Agent';
         <footer class="app-footer">
             <div class="app-footer__inner">
                 <span>Built with CakePHP <?= h(\Cake\Core\Configure::version()) ?></span>
-                <span>Simple tools for everyday AI help</span>
+                <span>AI workspace for focused assistance</span>
             </div>
         </footer>
     </div>
